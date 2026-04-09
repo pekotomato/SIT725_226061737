@@ -1,0 +1,23 @@
+{
+  "name": "3.2p",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/pekotomato/SIT725_226061737#readme",
+  "bugs": {
+    "url": "https://github.com/pekotomato/SIT725_226061737/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pekotomato/SIT725_226061737.git"
+  },
+  "license": "ISC",
+  "author": "Mei Osita",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

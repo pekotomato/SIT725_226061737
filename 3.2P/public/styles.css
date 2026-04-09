@@ -1,0 +1,48 @@
+.Peko-size {
+    height: 40px;  
+    width: auto;   
+    max-height: 100%;  
+     display: block;  
+    vertical-align: middle;
+}
+
+nav .brand-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+nav .brand-logo img {
+    height: 40px;  
+}
+
+.main-body {
+background-color: #F28487;
+
+}
+.materialboxed-image {
+margin: 0 auto;
+height: 100px;
+}
+.click-me-button {
+background-color: #EE6E73;
+margin-top: 50px;
+}
+
+.card-reveal {
+color: black;
+}
+.card-reveal .card-title,
+.card-reveal p {
+color: black;
+}
+
+.card {
+  height: 400px;
+}
+
+.card-image img {
+  height: 250px;
+  object-fit: cover;
+}
