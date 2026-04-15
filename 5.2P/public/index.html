@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books Catalog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #f5f0eb;
+            color: #2c2c2c;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: #3b2f2f;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #7a6a5a;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+
+        #book-list {
+            max-width: 700px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .book-card {
+            background: #fff;
+            border-left: 5px solid #8b5e3c;
+            border-radius: 4px;
+            padding: 18px 22px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .book-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #3b2f2f;
+        }
+
+        .book-author {
+            font-size: 0.95rem;
+            color: #7a6a5a;
+            margin-top: 4px;
+        }
+
+        #error-msg {
+            text-align: center;
+            color: #c0392b;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Books Catalog</h1>
+    <p class="subtitle">SIT725 — 5.2P</p>
+    <p id="error-msg">Failed to load books.</p>
+    <ul id="book-list"></ul>
+
+    <script>
+        fetch('/api/books')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (response) {
+                var books = response.data;  // <-- add this
+                var list = document.getElementById('book-list');
+                books.forEach(function (book) {
+                    var li = document.createElement('li');
+                    li.className = 'book-card';
+                    li.innerHTML =
+                        '<div class="book-title">' + book.title + '</div>' +
+                        '<div class="book-author">by ' + book.author + '</div>';
+                    list.appendChild(li);
+                });
+            })
+            .catch(function () {
+                document.getElementById('error-msg').style.display = 'block';
+            });
+    </script>
+</body>
+
+</html>
