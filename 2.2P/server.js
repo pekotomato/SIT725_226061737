@@ -17,6 +17,17 @@ app.get("/square", (req, res) => {
   res.send(`The square of ${num} is: ${square}`);
 });
 
+app.get("/add", (req, res) => {
+  const a = parseFloat(req.query.a);
+  const b = parseFloat(req.query.b);
+
+  if (isNaN(a) || isNaN(b)) {
+    return res.send("Error: Please provide valid numbers.");
+  }
+
+  res.send(`The sum of ${a} and ${b} is: ${a + b}`);
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
